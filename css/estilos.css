@@ -1,0 +1,342 @@
+:root {
+  --color-fondo: #ffffff;             /* Fondo general blanco */
+  --color-primario: #a83232;          /* Rojo intenso */
+  --color-secundario: #f8dada;        /* Rosa claro para secciones */
+  --color-acento: #6e0f0f;            /* Rojo oscuro (bordes y títulos) */
+  --color-texto-claro: #ffffff;       /* Blanco para texto en fondos oscuros */
+  --color-texto-oscuro: #2a2a2a;      /* Texto principal */
+  --color-destacado: #ffebeb;         /* Fondo sutil para resaltar */
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto-oscuro);
+}
+
+header {
+  position: relative;
+  text-align: center;
+  padding: 10vw 5vw;
+  color: #2a2a2a; /* texto oscuro */
+  background-color: #fff;
+  overflow: hidden;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../img/fondo-header.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: blur(4px) brightness(0.85); /* un poco más oscuro para contraste */
+  z-index: 0;
+  opacity: 1;
+}
+
+header * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fondo semi-transparente detrás del texto para mejorar contraste */
+header .overlay-text {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.85); /* blanco translúcido */
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Estilos tipográficos llamativos para título y subtítulos */
+header h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  text-shadow: 2px 2px 5px rgba(110, 15, 15, 0.3); /* sombra suave rojiza */
+  margin-bottom: 0.5rem;
+  color: var(--color-acento); /* rojo oscuro */
+}
+
+header p.lead {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--color-primario);
+  text-shadow: 1px 1px 3px rgba(110, 15, 15, 0.25);
+}
+
+header p.fst-italic {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--color-acento);
+  text-shadow: 1px 1px 3px rgba(110, 15, 15, 0.15);
+}
+
+/* Responsive: ajustar tamaño en móvil */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.8rem;
+  }
+
+  header p.lead {
+    font-size: 1.2rem;
+  }
+
+  header p.fst-italic {
+    font-size: 1rem;
+  }
+
+  header {
+    padding: 15vw 5vw;
+  }
+}
+
+
+
+
+
+/* SECCIONES DE CATEGORÍAS */
+main.categorias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  background-color: var(--color-destacado);
+}
+
+section {
+  background-color: var(--color-secundario);
+  border: 2px solid var(--color-acento);
+  padding: 20px;
+  width: 220px;
+  border-radius: 10px;
+  text-align: center;
+  color: var(--color-texto-oscuro);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+section:hover {
+  transform: scale(1.05);
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+}
+
+section:hover a {
+  color: var(--color-texto-claro);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-acento);
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  background-color: var(--color-acento);
+  color: var(--color-texto-claro);
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.categorias section img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+
+  .login-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .login-container label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  .login-container input {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .login-container button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #a83232;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .login-container button:hover {
+    background-color: #d64141;
+  }
+
+  /* Contenedores sin fondo ni borde */
+#gestionUsuarios, #crearEntrada {
+  margin-bottom: 30px;
+  color: var(--color-texto-oscuro);
+}
+
+/* Títulos simples */
+#gestionUsuarios h2, #crearEntrada h2 {
+  color: var(--color-acento);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Tabla simple */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  color: var(--color-texto-oscuro);
+}
+
+th, td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  font-weight: 600;
+}
+
+/* Hover muy sutil para filas */
+tbody tr:hover {
+  background-color: var(--color-secundario);
+}
+
+/* Botones planos, sin bordes ni sombra */
+button.editar-btn, button.eliminar-btn, button[type="submit"] {
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  border: none;
+  padding: 6px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+button.editar-btn:hover {
+  background-color: #d64141;
+}
+
+button.eliminar-btn:hover {
+  background-color: #8a1f1f;
+}
+
+button[type="submit"]:hover {
+  background-color: #d64141;
+}
+
+/* Inputs y textarea simples */
+input[type="text"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Mensaje de confirmación */
+#mensajeEntrada {
+  margin-top: 12px;
+  color: green;
+  font-weight: 600;
+}
+
+/* Footer simple */
+footer {
+  background-color: var(--color-acento);
+  color: var(--color-texto-claro);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-weight: 600;
+}
+
+/* Responsive: tabla adaptada en móvil */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-acento);
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: 600;
+    color: var(--color-acento);
+  }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
+#adminPage section:hover {
+  transform: none !important;
+  background-color: inherit !important;  /* O el color que quieras mantener */
+  color: inherit !important;
+}

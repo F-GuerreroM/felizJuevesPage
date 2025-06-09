@@ -1,0 +1,234 @@
+:root {
+  --color-fondo: #ffffff;
+  --color-primario: #a83232;
+  --color-secundario: #f8dada;
+  --color-acento: #6e0f0f;
+  --color-texto-claro: #ffffff;
+  --color-texto-oscuro: #2a2a2a;
+  --color-destacado: #ffebeb;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto-oscuro);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-acento);
+  font-weight: bold;
+}
+
+button {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Login y formularios */
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.login-container label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--color-primario);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #d64141;
+}
+
+/* Secciones generales */
+section {
+  background-color: var(--color-secundario);
+  border: 2px solid var(--color-acento);
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+section:hover {
+  transform: scale(1.05);
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+}
+
+section:hover a {
+  color: var(--color-texto-claro);
+}
+
+/* Tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  color: var(--color-texto-oscuro);
+}
+
+th, td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  font-weight: 600;
+}
+
+tbody tr:hover {
+  background-color: var(--color-secundario);
+}
+
+/* Botones de acción */
+button.editar-btn,
+button.eliminar-btn,
+button[type="submit"] {
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  border: none;
+  padding: 6px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+button.editar-btn:hover {
+  background-color: #d64141;
+}
+
+button.eliminar-btn:hover {
+  background-color: #8a1f1f;
+}
+
+button[type="submit"]:hover {
+  background-color: #d64141;
+}
+
+/* Inputs y textarea */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Mensaje de éxito */
+#mensajeEntrada {
+  margin-top: 12px;
+  color: green;
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-acento);
+  color: var(--color-texto-claro);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-weight: 600;
+}
+
+/* Contenedores simples */
+#gestionUsuarios, #crearEntrada {
+  margin-bottom: 30px;
+  color: var(--color-texto-oscuro);
+}
+
+#gestionUsuarios h2, #crearEntrada h2 {
+  color: var(--color-acento);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Responsive - tabla adaptable */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-acento);
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: 600;
+    color: var(--color-acento);
+  }
+}
+
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  header {
+    padding: 15vw 5vw;
+  }
+}
+
+/* Evitar efectos hover en página admin específica */
+#adminPage section:hover {
+  transform: none !important;
+  background-color: inherit !important;
+  color: inherit !important;
+}

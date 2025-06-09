@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ligas TCG - ¡Feliz Jueves!</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/estilos.css" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    #map {
+      height: 500px;
+      max-width: 900px;
+      margin: 2rem auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="overlay-text mx-auto text-center">
+      <h1>¡Feliz Jueves!</h1>
+      <p class="lead">Tu página por otakus para otakus</p>
+      <p class="fst-italic">Reuniones, cosplays, ventas, TCG, y más</p>
+    </div>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light mt-3">
+      <div class="container">
+        <a class="navbar-brand" href="/">Feliz Jueves</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/menu.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/secciones/reuniones.html">Reuniones</a></li>
+            <li class="nav-item"><a class="nav-link" href="ventas.html">Ventas</a></li>
+            <li class="nav-item"><a class="nav-link" href="cosplays.html">Cosplays</a></li>
+            <li class="nav-item"><a class="nav-link" href="tcg.html">Ligas TCG</a></li>
+            <li class="nav-item"><a class="nav-link" href="intercambios.html">Mas</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container text-center">
+    <h2 class="my-4">Eventos y Tiendas TCG Cercanas</h2>
+
+    <!-- Botón para ingresar evento -->
+    <div class="mb-3">
+      <button type="button" class="btn btn-primary">Ingresar mi evento</button>
+    </div>
+
+    <div id="map"></div>
+  </main>
+
+  <footer class="text-center text-muted py-3 mt-5 border-top">
+    &copy; 2025 ¡Feliz Jueves! Todos los derechos reservados.
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script>
+    // Coordenadas ejemplo: Santiago, Chile
+    const map = L.map('map').setView([-33.4489, -70.6693], 12);
+
+    // Carga el mapa OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Marcadores ejemplo - eventos y tiendas
+    const lugares = [
+      {
+        tipo: 'evento',
+        nombre: 'Torneo Pokémon Santiago',
+        coords: [-33.4445, -70.6539],
+        descripcion: 'Torneo abierto de Pokémon TCG en Centro Cultural XYZ'
+      },
+      {
+        tipo: 'evento',
+        nombre: 'Liga Yu-Gi-Oh! Providencia',
+        coords: [-33.4372, -70.6506],
+        descripcion: 'Liga semanal en tienda local Juegos Y Más'
+      },
+      {
+        tipo: 'tienda',
+        nombre: 'Tienda Cartas Chile',
+        coords: [-33.4521, -70.6635],
+        descripcion: 'Venta y eventos de cartas coleccionables'
+      },
+      {
+        tipo: 'tienda',
+        nombre: 'Zona TCG',
+        coords: [-33.4477, -70.6753],
+        descripcion: 'Especialistas en cartas de juegos y accesorios'
+      }
+    ];
+
+    // Añade los marcadores al mapa
+    lugares.forEach(lugar => {
+      const marker = L.marker(lugar.coords).addTo(map);
+      marker.bindPopup(`<strong>${lugar.nombre}</strong><br>${lugar.descripcion}`);
+    });
+  </script>
+</body>
+</html>

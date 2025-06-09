@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel de Administración - ¡Feliz Jueves!</title>
+  <link rel="stylesheet" href="/css/adminPage.css" />
+</head>
+<body id="adminPage">
+
+  <header>
+    <h1>Panel de Administración</h1>
+    <p>Gestiona usuarios y crea nuevas entradas</p>
+    <nav>
+      <a href="/menu.html">Volver a Inicio</a>
+    </nav>
+    <hr />
+  </header>
+
+  <main>
+    <section id="gestionUsuarios" class="panel-seccion">
+      <h2>Gestión de Usuarios</h2>
+      <table class="tabla-usuarios">
+        <thead>
+          <tr>
+            <th>Usuario</th>
+            <th>Correo</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>otaku1</td>
+            <td>otaku1@example.com</td>
+            <td>Usuario</td>
+            <td>
+              <button class="btn-editar">Editar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>admin</td>
+            <td>admin@example.com</td>
+            <td>Administrador</td>
+            <td>
+              <button class="btn-editar">Editar</button>
+              <button class="btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="crearEntrada" class="panel-seccion">
+      <h2>Crear Nueva Entrada</h2>
+      <form id="formNuevaEntrada" class="form-nueva-entrada">
+        <label for="titulo">Título de la Entrada:</label>
+        <input type="text" id="titulo" name="titulo" required />
+
+        <label for="contenido">Contenido:</label>
+        <textarea id="contenido" name="contenido" rows="6" required></textarea>
+
+        <button type="submit" class="btn-guardar">Guardar Entrada</button>
+      </form>
+      <p id="mensajeEntrada" class="mensaje-exito"></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 ¡Feliz Jueves! Comunidad Otaku.
+  </footer>
+
+  <script src="adminPage.js"></script>
+</body>
+</html>

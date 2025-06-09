@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ventas - ¡Feliz Jueves!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/estilos.css" />
+  <style>
+    /* Cards con fondo rojo y texto blanco */
+    .card-placeholder {
+      background-color: #b22222; /* rojo fuego, ajustar al color real de tu web */
+      color: white;
+      border-radius: 0.5rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 180px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+    .card-placeholder:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(178, 34, 34, 0.7);
+    }
+    .card-placeholder h5 {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+    .card-placeholder p {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="overlay-text mx-auto text-center">
+      <h1>¡Feliz Jueves!</h1>
+      <p class="lead">Tu página por otakus para otakus</p>
+      <p class="fst-italic">Reuniones, cosplays, ventas, TCG, y más</p>
+    </div>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light mt-3">
+      <div class="container">
+        <a class="navbar-brand" href="/">Feliz Jueves</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/menu.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/secciones/reuniones.html">Reuniones</a></li>
+            <li class="nav-item"><a class="nav-link" href="ventas.html">Ventas</a></li>
+            <li class="nav-item"><a class="nav-link" href="cosplays.html">Cosplays</a></li>
+            <li class="nav-item"><a class="nav-link" href="tcg.html">Ligas TCG</a></li>
+            <li class="nav-item"><a class="nav-link" href="intercambios.html">Mas</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <h2 class="mb-4 text-center">Categorías de Venta</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      
+      <div class="col">
+        <div class="card-placeholder">
+          <h5>Figuras de Anime</h5>
+          <p>Encuentra figuras coleccionables de tus personajes favoritos.</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card-placeholder">
+          <h5>Mangas</h5>
+          <p>Compra y vende mangas de distintas series y géneros.</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card-placeholder">
+          <h5>Merchandising</h5>
+          <p>Productos exclusivos, camisetas, posters, y más.</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card-placeholder">
+          <h5>Videojuegos y Juegos de Cartas</h5>
+          <p>Títulos, cartas y accesorios para gamers y coleccionistas.</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card-placeholder">
+          <h5>Accesorios</h5>
+          <p>Llaveros, pins, y otros objetos para complementar tu colección.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="text-center text-muted py-3 mt-5 border-top">
+    &copy; 2025 ¡Feliz Jueves! Todos los derechos reservados.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

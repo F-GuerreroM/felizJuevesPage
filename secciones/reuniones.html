@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reuniones - ¡Feliz Jueves!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/estilos.css" />
+</head>
+<body>
+  <!-- HEADER con overlay y menú de navegación -->
+  <header>
+    <div class="overlay-text mx-auto text-center">
+      <h1>¡Feliz Jueves!</h1>
+      <p class="lead">Tu página por otakus para otakus</p>
+      <p class="fst-italic">Reuniones, cosplays, ventas, TCG, y más</p>
+    </div>
+
+    <!-- Aquí puedes poner tu menú de navegación si lo tienes definido -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light mt-3">
+      <div class="container">
+        <a class="navbar-brand" href="/">Feliz Jueves</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/menu.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/secciones/reuniones.html">Reuniones</a></li>
+            <li class="nav-item"><a class="nav-link" href="ventas.html">Ventas</a></li>
+            <li class="nav-item"><a class="nav-link" href="cosplays.html">Cosplays</a></li>
+            <li class="nav-item"><a class="nav-link" href="tcg.html">Ligas TCG</a></li>
+            <li class="nav-item"><a class="nav-link" href="intercambios.html">Mas</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO ESPECÍFICO -->
+  <main class="container my-5">
+    <div class="row mb-4 justify-content-center">
+      <div class="col-md-6 text-center">
+        <label for="fechaEvento" class="form-label fs-5">Selecciona fecha</label>
+        <input type="date" id="fechaEvento" class="form-control" />
+      </div>
+    </div>
+
+    <div class="row mb-4 justify-content-center">
+      <div class="col-md-4 text-center">
+        <button id="btnSolicitarEvento" class="btn btn-danger w-100 fw-bold">
+          Solicitar / Ingresar Evento
+        </button>
+      </div>
+    </div>
+
+    <section id="listaEventos" class="border rounded p-4 bg-white shadow-sm">
+      <h2 class="h4 mb-3">Eventos programados</h2>
+      <p class="text-muted">Aquí aparecerán los eventos próximos.</p>
+    </section>
+  </main>
+
+  <footer class="text-center text-muted py-3 mt-5 border-top">
+    &copy; 2025 ¡Feliz Jueves! Todos los derechos reservados.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
